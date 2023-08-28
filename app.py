@@ -2,7 +2,13 @@ from transformers import pipeline
 import gradio as gr
 import time
 
-p = pipeline("automatic-speech-recognition")
+#p = pipeline("automatic-speech-recognition")
+
+
+
+model_id = "openai/whisper-small"
+
+p = pipeline("automatic-speech-recognition", model=model_id)
 
 def transcribe(audio, state=""):
     time.sleep(2)
